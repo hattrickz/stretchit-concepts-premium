@@ -1,32 +1,90 @@
-# React + TypeScript + Vite
+# Stretch-IT Concepts — Premium Site Rebuild
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A ground-up redesign of [stretchitconcepts.com](https://stretchitconcepts.com), rebuilt in React, TypeScript, Tailwind CSS, and Framer Motion. Same content and structure as the original WordPress site, redesigned to a premium editorial standard with real motion design instead of a template look.
 
-Currently, two official plugins are available:
+## Design system
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Palette** — deep indigo (`#242F8F`), near-black navy (`#0E1330`), warm gold accent (`#D9A441`), cool off-white (`#F5F6F8`)
+- **Type** — `Fraunces` for headlines, `Inter` for body copy, `Space Grotesk` for nav/labels/eyebrows
+- **Signature motif** — the "Stretch Rule," a thin accent line that elongates into view on scroll and nav-hover, used as the site's recurring structural device
+- Tokens live in `tailwind.config.js`; fonts are loaded via Google Fonts in `index.html`
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| | |
+|---|---|
+| Framework | React 19 + TypeScript, via Vite |
+| Styling | Tailwind CSS |
+| Motion | Framer Motion |
+| Routing | React Router v6 |
+| Icons | lucide-react (UI), react-icons/fa6 (social brand icons) |
 
-## Expanding the Oxlint configuration
+## Project structure
+src/
+assets/
+services/ # hero images for individual service pages
+logo.png # brand lockup
+logo-mark.png # cropped icon mark (used for favicon)
+components/ # shared building blocks (Nav, Footer, Layout, etc.)
+sections/ # page sections composed from components (Hero, FAQ, etc.)
+pages/ # route-level pages (Home, About, Contact, ServiceDetail, JobCirculation)
+lib/
+data.ts # all site copy — services, FAQs, stats, contact info
+serviceImages.ts # maps each service slug to its hero image
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Routes
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+| Path | Page |
+|---|---|
+| `/` | Home |
+| `/about` | About |
+| `/contact` | Contact |
+| `/services/:slug` | Service detail (Recruitment Services, Outsourcing, Human Capital Development, HR Management Consultancy, Talent Management, Performance Management) |
+| `/job-circulation` | Careers / job circulation (placeholder page) |
+
+## Adding a new service image
+
+Drop the file into `src/assets/services/`, then register it in `src/lib/serviceImages.ts`:
+
+```ts
+import newServiceHero from "../assets/services/new-service.jpg";
+
+export const serviceHeroImages: Record<string, string> = {
+  // ...existing entries
+  "new-service-slug": newServiceHero,
+};
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+The `ServiceDetail` page automatically uses the registered image instead of the dashed placeholder box once it's added.
+
+## Editing content
+
+All copy — service descriptions, checklists, FAQs, contact details, stats — lives in `src/lib/data.ts`. No content is hardcoded into components; edit that one file to update text across the site.
+
+## Getting started
+
+```bash
+npm install
+npm run dev       # starts the dev server at http://localhost:5173
+```
+
+## Build
+
+```bash
+npm run build      # type-checks with tsc, then builds to dist/
+npm run preview    # serve the production build locally
+```
+
+`dist/` is a generated build artifact and is not committed — it's excluded via `.gitignore` and rebuilt fresh on every deploy.
+
+## Deployment
+
+Deployed via [Vercel](https://vercel.com), connected directly to this repository. Every push to `main` triggers an automatic build and deploy.
+
+- **Framework Preset:** Vite
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist`
+
+## Notes
+
+- Built with the experimental `rolldown-vite` toolchain (Vite 8). If the dev server throws parser errors on otherwise-valid JSX, prefer simple, explicit component structures over destructured `.map()` patterns, or pin back to a stable Vite release (`npm install vite@^6`) if issues persist.
