@@ -4,6 +4,7 @@ import { CheckCircle2, Phone, ArrowUpRight } from "lucide-react";
 import Layout from "../components/Layout";
 import PageHero from "../components/PageHero";
 import ImagePlaceholder from "../components/ImagePlaceholder";
+import FadeImage from "../components/FadeImage";
 import Reveal from "../components/Reveal";
 import StretchRule from "../components/StretchRule";
 import { services, serviceDetails } from "../lib/data";
@@ -37,7 +38,7 @@ export default function ServiceDetail() {
       <section className="max-w-content mx-auto px-6 md:px-8 -mt-10 relative z-10">
         <Reveal>
           {serviceHeroImages[summary.slug] ? (
-            <img
+            <FadeImage
               src={serviceHeroImages[summary.slug]}
               alt={`${summary.name} hero`}
               className="w-full aspect-[21/9] object-cover rounded-2xl shadow-xl"

@@ -86,15 +86,15 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative rounded-3xl bg-ink p-10 sm:p-12 aspect-[4/5] flex flex-col justify-end overflow-hidden"
+          className="relative rounded-3xl bg-ink p-6 sm:p-12 sm:aspect-[4/5] flex flex-col justify-end overflow-hidden"
         >
-          <div className="absolute top-8 left-10 right-10 flex items-center justify-between">
+          <div className="flex items-center justify-between mb-8 sm:mb-0 sm:absolute sm:top-8 sm:left-10 sm:right-10">
             <span className="font-label text-paper/50 text-xs uppercase tracking-[0.15em]">
               Workforce Growth Index
             </span>
-            <span className="w-2 h-2 rounded-full bg-gold" />
+            <span className="w-2 h-2 rounded-full bg-gold shrink-0" />
           </div>
-          <div className="flex items-end gap-2.5 sm:gap-3 h-56">
+          <div className="flex items-end gap-2 sm:gap-3 h-36 sm:h-56">
             {bars.map((h, i) => (
               <motion.div
                 key={i}
@@ -108,7 +108,7 @@ export default function Hero() {
               />
             ))}
           </div>
-          <p className="mt-8 text-paper/70 text-sm leading-relaxed max-w-xs">
+          <p className="mt-6 sm:mt-8 text-paper/70 text-sm leading-relaxed max-w-xs">
             Fourteen years of consistent placement, retention, and performance
             outcomes across Nigeria's private sector.
           </p>

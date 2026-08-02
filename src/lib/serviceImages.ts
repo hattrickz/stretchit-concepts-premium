@@ -1,13 +1,9 @@
-// Register each service's hero image here as you add the file to
-// src/assets/services/. Uncomment the import and add the map entry —
-// the ServiceDetail page automatically uses it instead of the placeholder.
-
-import recruitmentHero from "../assets/services/recruitment-services.jpg";
-import outsourcingHero from "../assets/services/outsourcing.jpg";
-import humanCapitalHero from "../assets/services/human-capital-development.jpg";
-import hrConsultancyHero from "../assets/services/hr-management-consultancy.jpg";
-import talentManagementHero from "../assets/services/talent-management.jpg";
-import performanceManagementHero from "../assets/services/performance-management.jpg";
+import recruitmentHero from "../assets/services/recruitment-services.webp";
+import outsourcingHero from "../assets/services/outsourcing.webp";
+import humanCapitalHero from "../assets/services/human-capital-development.webp";
+import hrConsultancyHero from "../assets/services/hr-management-consultancy.webp";
+import talentManagementHero from "../assets/services/talent-management.webp";
+import performanceManagementHero from "../assets/services/performance-management.webp";
 
 export const serviceHeroImages: Record<string, string> = {
   "recruitment-services": recruitmentHero,
