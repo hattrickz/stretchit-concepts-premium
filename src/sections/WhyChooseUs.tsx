@@ -17,7 +17,7 @@ export default function WhyChooseUs() {
           </h2>
           <p className="mt-6 text-paper/65 text-lg leading-relaxed max-w-md">
             We take the time to understand your organization before we
-            recommend anything — so what we deliver actually aligns with
+            recommend anything so what we deliver actually aligns with
             where you're trying to go.
           </p>
           <Link
@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
               </h3>
               <p className="text-paper/75 leading-relaxed">
                 To be the leading Human Resources practitioners in Nigeria
-                and beyond — known for genuine, tailored partnership over
+                and beyond known for genuine, tailored partnership over
                 transactional service.
               </p>
             </div>

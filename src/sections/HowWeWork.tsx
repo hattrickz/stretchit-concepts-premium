@@ -19,8 +19,8 @@ export default function HowWeWork() {
             Customization, not a template.
           </h2>
           <p className="mt-6 text-lg text-slate-muted leading-relaxed max-w-md">
-            We believe in understanding your organization first — its culture,
-            its constraints, its ambitions — and only then designing the HR
+            We believe in understanding your organization first its culture,
+            its constraints, its ambitions and only then designing the HR
             solution that fits.
           </p>
         </Reveal>

@@ -12,7 +12,7 @@ export default function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Let's talk about your team."
-        description="Whether you're hiring, restructuring, or building HR from scratch — tell us where you're headed and we'll tell you how we can help."
+        description="Whether you're hiring, restructuring, or building HR from scratch tell us where you're headed and we'll tell you how we can help."
       />
       <ContactInfoBand />
 

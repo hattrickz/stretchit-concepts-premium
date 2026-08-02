@@ -39,7 +39,7 @@ export default function Hero() {
             className="mt-7 text-lg text-slate-muted max-w-lg leading-relaxed"
           >
             We're a human resource outsourcing, recruitment, and performance
-            management company — helping organizations attract, develop, and
+            management company helping organizations attract, develop, and
             retain the people who move them forward.
           </motion.p>
 
@@ -102,9 +102,8 @@ export default function Hero() {
                 whileInView={{ height: `${h}%` }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, delay: 0.5 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                className={`flex-1 rounded-t-sm ${
-                  i === 5 ? "bg-gold" : "bg-paper/25"
-                }`}
+                className={`flex-1 rounded-t-sm ${i === 5 ? "bg-gold" : "bg-paper/25"
+                  }`}
               />
             ))}
           </div>

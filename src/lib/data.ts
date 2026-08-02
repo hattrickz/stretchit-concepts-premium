@@ -22,7 +22,7 @@ export const services: ServiceSummary[] = [
     slug: "recruitment-services",
     name: "Recruitment Services",
     blurb:
-      "We source, screen, and place candidates who fit your team's skill needs and culture — not just the job description.",
+      "We source, screen, and place candidates who fit your team's skill needs and culture not just the job description.",
     tag: "01",
   },
   {
@@ -236,7 +236,7 @@ export const clients = [
 export const faqs = [
   {
     q: "What industries do you work with?",
-    a: "We work across sectors — technology, manufacturing, retail, and professional services — tailoring our HR approach to each industry's regulatory and talent landscape.",
+    a: "We work across sectors technology, manufacturing, retail, and professional services tailoring our HR approach to each industry's regulatory and talent landscape.",
   },
   {
     q: "How long does a typical recruitment engagement take?",
@@ -248,7 +248,7 @@ export const faqs = [
   },
   {
     q: "Can you manage payroll for a small team?",
-    a: "Our outsourcing service scales from single-digit teams to large workforces — there's no minimum headcount to get started.",
+    a: "Our outsourcing service scales from single-digit teams to large workforces there's no minimum headcount to get started.",
   },
 ];
 
